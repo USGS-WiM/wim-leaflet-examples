@@ -4,7 +4,7 @@
     "organization": "U.S. Geological Survey",
     "description": "Example code for common leaflet needs, arranged bespoke for WiM's needs",
     "version": "v0.0.0",
-    "status": "Ideation"
+    "status": "Ideation",
 
     "permissions": {
       "usageType": "openSource",
