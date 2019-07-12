@@ -20,26 +20,27 @@ $( document ).ready(function() {
 
 	$.ajax({
 		dataType: "json",
-		url: "http://stn.wim.usgs.gov/STNServices/Instruments.json?Event=24&EventType=&EventStatus=0&States=&County=&CurrentStatus=&CollectionCondition=&DeploymentType=",
+		url: "../data/data.json",
 		success: function (json) {
 
 			console.log(json);
 
 			//var markers = L.markerClusterGroup({disableClusteringAtZoom: 12});
 
-			for (var i = 0; i < json.length; i++) {
-				var a = json[i];
+			for (var i = 0; i < json.items.length; i++) {
+				var a = json.items[i];
 
-				var marker = L.circleMarker(new L.LatLng(a['LATITUDE'], a['LONGITUDE']), {
+				var marker = L.marker(new L.LatLng(a['LATDD'], a['LONGDD']), {
 					radius: 3,
 					fillOpacity: 0.95
 				});
 
 				//Baro
-				if (a.SENSOR_TYPE_ID == 1 && a.DEPLOYMENT_TYPE_ID == 3) {
+				/* if (a.pt_symbol == 'symbol0') {
+					marker.color()
 					marker.setStyle({color: '#FFFF00'});
-				}
-				//meteorological
+				} */
+				/* //meteorological
 				if (a.SENSOR_TYPE_ID == 2) {
 					marker.setStyle({color: '#FFC0CB'});
 				}
@@ -54,9 +55,9 @@ $( document ).ready(function() {
 				//wave height
 				if (a.SENSOR_TYPE_ID == 1 && a.DEPLOYMENT_TYPE_ID == 1) {
 					marker.setStyle({color: '#800080'});
-				}
+				} */
 
-				marker.bindPopup("Site ID: " + a.SITE_NO);
+				marker.bindPopup("Site ID: " + a.site_no);
 				map.addLayer(marker);
 
 			}
