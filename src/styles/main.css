@@ -107,10 +107,6 @@ body {
     /*max-height: inherit;*/
 }
 
-#legendCollapse {
-    /*max-height: inherit;*/
-}
-
 /*#legendElement {*/
 /*position:absolute;*/
 /*padding:4px;*/
@@ -273,4 +269,18 @@ input[type="checkbox"], input[type="radio"] {
     width: 100%;
     padding: 1px;
     font-weight: bold;
+}
+
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.25); /* IE */
+  -moz-transform: scale(1.25); /* FF */
+  -webkit-transform: scale(1.25); /* Safari and Chrome */
+  -o-transform: scale(1.25); /* Opera */
+  transform: scale(1.25);
+  padding: 10px;
+  float:left;
+  margin-left:10px;
 }
